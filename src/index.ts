@@ -245,5 +245,79 @@ const bubbleSort = (arr: number[]): number[] => {
   return arr
 }
 
+const countElement=(arr:number[],element:number):number=>{
+let count=0;
+for(let i=0;i<arr.length;i++){
+  let currentElement=arr[i];
+  if(currentElement===element){
+    count++;
+  }
+} 
+ return count
+}
 
+const fizzBuzz=(num:number):string=>{
+let str=""
+  for(let i=1;i<=num;i++){
+    if(i%3===0){
+str+="Fizz "
+    }
+    if(i%5===0){
+      str+="Buzz "
+    }
+    if(i%3===0&&i%5===0){
+      str+="FizzBuzz "
+    }
+    if(i%3!==0&&i%5!==0){
+      str+=`${i} `
+    }
+    
+  }
+  return str
+}
+
+const generateRandomString=(num:number):string=>{
+
+  const characters:string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'; 
+  let str="";
+
+  for(let i=0;i<=num;i++){
+    const randomIndex = Math.floor(Math.random() * characters.length); 
+    str=str+characters.charAt(randomIndex)
+  }
+
+  console.log(str)
+
+  return str
+}
+
+const mergeAlternating=(arr1:number[], arr2:number[]):number[] =>{
+    let minLength = Math.min(arr1.length, arr2.length);
+    let mergedArray = [];
+
+   
+    for (let i = 0; i < minLength; i++) {
+        mergedArray.push(arr1[i]);
+        mergedArray.push(arr2[i]);
+    }
+
+    if (arr1.length > minLength) {
+        mergedArray = mergedArray.concat(arr1.slice(minLength));
+    }
+    if (arr2.length > minLength) {
+        mergedArray = mergedArray.concat(arr2.slice(minLength));
+    }
+
+    return mergedArray;
+}
+
+const findIndex=(arr:number[],element:number):number=>{
+    for(let i=0;i<arr.length;i++){
+        let currentElement=arr[i];
+        if(element===currentElement){
+            return i;
+        }
+    }
+    return -1
+}
 
